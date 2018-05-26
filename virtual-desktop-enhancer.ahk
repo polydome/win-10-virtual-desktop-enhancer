@@ -130,7 +130,7 @@ for index in arrayS {
     hkComboUnpinApp           := RegExReplace(hkComboUnpinApp, arrayS[index], arrayR[index])
     hkComboTogglePinApp       := RegExReplace(hkComboTogglePinApp, arrayS[index], arrayR[index])
     hkComboOpenDesktopManager := RegExReplace(hkComboOpenDesktopManager, arrayS[index], arrayR[index])
-    hkComboChangeDesktopName    := RegExReplace(hkComboChangeDesktopName, arrayS[index], arrayR[index])    
+    hkComboChangeDesktopName    := RegExReplace(hkComboChangeDesktopName, arrayS[index], arrayR[index])
 }
 
 ; Setup key bindings dynamically
@@ -346,6 +346,7 @@ OnDesktopSwitch(n:=1) {
 SwitchToDesktop(n:=1) {
     doFocusAfterNextSwitch=1
     _ChangeDesktop(n)
+    Send !{Tab}
 }
 
 MoveToDesktop(n:=1) {
